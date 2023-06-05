@@ -1,0 +1,59 @@
+[PROJECT]
+Target=cau1.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=cau1.c
+[cau1.c]
+Type=4
+[mru-list]
+1=cau1.c
+
+[defines]
+buildcount=23
+
+[Opened Files]
+1=cau1.c
+t1=6
+2=cau2.c
+t2=6
+3=cau1.c
+t3=9
+Count=2
+
+[ProjectLog]
+Days=3
+D1=29-05-2023
+D1_L=13
+D1_L1=[90]Stopped Editing.
+D1_L2=[384]Started Editing.
+D1_L3=[870]Stopped Editing.
+D1_L4=[1077]Started Editing.
+D1_L5=[2111]Stopped Editing.
+TotalEdit=31
+TotalDebug=0
+D1_E=31
+D1_D=0
+D1_L6=[2111]Project Closed.
+D1_L7=[40215]Project Opened.
+D1_L8=[40314]Started Editing.
+D1_L9=[40626]Stopped Editing.
+D1_L10=[43041]Started Editing.
+D1_L11=[45147]Project Closed.
+D1_L12=[83214]Project Opened.
+D1_L13=[83215]Project Closed.
+D2=30-05-2023
+D2_L=2
+D2_L1=[77546]Project Opened.
+D2_L2=[77547]Project Closed.
+D3=31-05-2023
+D3_L=2
+D3_L1=[40239]Project Opened.
+D3_L2=[40240]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=cau1 (main)

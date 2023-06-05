@@ -1,0 +1,35 @@
+#include<16F887.h>
+#device ADC=10
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+#include <lcd.c>
+
+int16 SP , ND ; 
+
+void main()
+{
+   set_tris_E(0xFF);
+   set_tris_C(0xFF);
+   set_tris_D(0xFF);
+   setup_timer_1(T1_EXTERNAL|T1_DIV_BY_1);
+   set_timer1(0);
+   setup_ADC(ADC_CLOCK_INTERNAL);
+   setup_ADC_PORTS(SAN5|VSS_VDD);
+   
+   while(True)
+   {
+      set_ADC_channel(5);
+      delay_us(20);
+      ND = read_ADC()/2.046;
+      
+      if (ND <= 100)
+      {
+         setup_timer_1(T1_EXTERNAL|T1_DIV_BY_1);
+      }
+      else setup_timer_1(T1_DISABLED);
+      
+      SP = get_timer1();
+      
+      if ( S)
+   
+   }

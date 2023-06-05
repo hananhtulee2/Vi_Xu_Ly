@@ -1,0 +1,51 @@
+[PROJECT]
+Target=ktrabai1.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=ktrabai1.c
+[ktrabai1.c]
+Type=4
+[mru-list]
+1=ktrabai1.c
+
+[defines]
+buildcount=3
+
+[ProjectLog]
+Days=2
+D1=02-04-2023
+D1_L=3
+D1_L1=[85447]Stopped Editing.
+D1_L2=[85647]Started Editing.
+D1_L3=[86219]Stopped Editing.
+D2=03-04-2023
+D2_L=10
+D2_L1=[39]Started Editing.
+D2_L2=[431]Stopped Editing.
+D2_L3=[1554]Started Editing.
+D2_L4=[1854]Stopped Editing.
+TotalEdit=9
+TotalDebug=0
+D2_E=9
+D2_D=0
+D2_L5=[4013]Project Closed.
+D2_L6=[47369]Project Opened.
+D2_L7=[47370]Project Closed.
+D2_L8=[47372]Project Opened.
+D2_L9=[47410]Started Editing.
+D2_L10=[47433]Project Closed.
+
+[Opened Files]
+1=ktrabai1.c
+t1=56
+2=..\dieukhiennutnhankhongchongdoi\nutnhankhongchongdoi.c
+t2=1
+Count=2
+[Units]
+Count=1
+1=ktrabai1 (main)
+
+[fileformats]
+forcecoff=0

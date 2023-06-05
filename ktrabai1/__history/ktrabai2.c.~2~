@@ -1,0 +1,16 @@
+#include <16F887.h>
+#device ADC=10
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+#include <lcd.c>
+
+
+
+void main() {
+   set_tris_a(0b00000011) ; 
+   
+   lcd_init() ; 
+   
+
+
+}

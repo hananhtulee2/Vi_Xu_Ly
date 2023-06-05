@@ -1,0 +1,36 @@
+[PROJECT]
+Target=lcd-adc.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=lcd-adc.c
+[lcd-adc.c]
+Type=4
+[mru-list]
+1=lcd-adc.c
+[Units]
+Count=1
+1=lcd-adc (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=03-04-2023
+D1_L=7
+D1_L1=[79222]Stopped Editing.
+TotalEdit=2
+TotalDebug=0
+D1_E=2
+D1_D=0
+D1_L2=[79222]Project Closed.
+D1_L3=[81667]Project Opened.
+D1_L4=[81669]Project Closed.
+D1_L5=[81671]Project Opened.
+D1_L6=[83986]Started Editing.
+D1_L7=[84736]Project Closed.
+
+[fileformats]
+forcecoff=0

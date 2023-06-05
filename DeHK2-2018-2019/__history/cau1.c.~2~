@@ -1,0 +1,5 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+

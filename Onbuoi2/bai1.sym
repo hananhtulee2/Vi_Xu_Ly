@@ -1,0 +1,124 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     lcdlat
+008     lcd
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     mode
+021     product
+022-023 box
+024-025 @sprintf_string
+026     @TRIS_C
+027     @PRINTF_U_733.P1
+027     @PSTRINGCN7_733.P2
+027-028 @PRINTF_LU_733.P3
+027     lcd_init.i
+027     @PSTRINGC7_733.@SCRATCH1
+027     MAIN.@SCRATCH1
+028-02B lcd_init.LCD_INIT_STRING
+028     @PRINTF_U_733.P1
+028     @PSTRINGCN7_733.@SCRATCH1
+028     @PSTRINGC7_733.@SCRATCH2
+029     @DIV88.P1
+029     @PSTRINGCN7_733.@SCRATCH2
+029     @PRINTF_LU_733.@SCRATCH1
+029     @PSTRINGC7_733.@SCRATCH3
+02A     @DIV88.P1
+02A     @PSTRINGCN7_733.@SCRATCH3
+02A     @PRINTF_LU_733.@SCRATCH2
+02A     @PSTRINGC7_733.@SCRATCH4
+02B     @DIV88.@SCRATCH1
+02B     @PSTRINGCN7_733.@SCRATCH4
+02B     @PRINTF_LU_733.@SCRATCH3
+02C     lcd_init.@SCRATCH1
+02C     @PRINTF_LU_733.@SCRATCH4
+02D     @PRINTF_LU_733.@SCRATCH5
+02E     @PRINTF_LU_733.@SCRATCH6
+02F     @PRINTF_LU_733.@SCRATCH7
+030     lcd_putc.c
+031     @delay_ms1.P1
+031     lcd_gotoxy.x
+032     lcd_gotoxy.y
+033     lcd_gotoxy.address
+034     lcd_gotoxy.@SCRATCH1
+035     lcd_send_byte.address
+036     lcd_send_byte.n
+037     lcd_read_byte.low
+037     lcd_send_byte.@SCRATCH1
+038     lcd_send_nibble.n
+038     lcd_read_byte.high
+039     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const756.call
+000009  @const761.call
+00000C  @const766.call
+00000F  @const767.call
+000012  @const768.call
+000015  @delay_ms1
+000029  lcd_send_nibble
+000036  lcd_read_nibble
+00003C  lcd_send_byte
+000042  lcd_read_byte
+00007C  lcd_init
+0000BA  lcd_gotoxy
+0000CC  lcd_putc
+0000F8  @DIV88
+00010D  @PSTRINGC7_733
+000163  hienthiLCD
+000171  @PRINTF_U_733
+0001B2  @PSTRINGCN7_733
+00020E  @PRINTF_LU_733
+0002A8  MAIN
+0002A8  @cinit1
+0002C8  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\Onbuoi2\
+
+Project Files:
+    bai1.c                                                  [23-May-23 16:11  CRC=834367C3]
+    C:\Program Files (x86)\PICC\Devices\16f887.h            [06-May-22 15:52  CRC=DB832FED]
+    C:\Program Files (x86)\PICC\Drivers\lcd.c               [22-Feb-16 10:05  CRC=D1A6378A]
+
+Source signature=021306C4
+Program memory checksum=0000
+Hex file CRC=2D77
+
+Units:
+    E:\PIC 16F887\Code\Onbuoi2\bai1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   bai1.xsym
+    Errors:      bai1.err
+    Ext Symbols: bai1.esym
+    INHX8:       bai1.hex
+    Symbols:     bai1.sym
+    List:        bai1.lst
+    Debug/COFF:  bai1.cof
+    Project:     bai1.ccspjt
+    Call Tree:   bai1.tre
+    Statistics:  bai1.STA

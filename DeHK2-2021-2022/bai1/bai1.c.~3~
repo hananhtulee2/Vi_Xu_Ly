@@ -1,0 +1,20 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define Q_TENS     PIN_E0
+#define Q_UNITS    PIN_E1
+unsigned char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+unsigned int8 Count;
+void delay_msScanLED(unsigned int16 t);
+void main()
+{
+set_tris_b(0b00000000);
+set_tris_d(0b00000000);
+while(TRUE)
+{
+
+
+
+}
+}

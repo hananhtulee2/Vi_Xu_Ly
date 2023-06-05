@@ -1,0 +1,30 @@
+[PROJECT]
+Target=dieuchePWM.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=dieuchePWM.c
+[dieuchePWM.c]
+Type=4
+[mru-list]
+1=dieuchePWM.c
+[Units]
+Count=1
+1=dieuchePWM (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=14-05-2023
+D1_L=4
+D1_L1=[53069]Stopped Editing.
+D1_L2=[53117]Started Editing.
+D1_L3=[53122]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L4=[53122]Project Closed.

@@ -1,0 +1,36 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define  RAND  PIN_B0
+
+
+unsigned int8 speed = 0 ; 
+char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+
+void main(){
+   set_tris_d(0xff); 
+   set_tris_b(0x00);
+   set_tris_c(0x00);
+   
+   setup_ccp1(ccp_off); output_low(pin_C2);
+   
+   setup_timer_2(T2_DIV_BY_16,249,1);
+   set_timer2(0);
+
+while(true){
+   if(input(RAND) == 0 ){
+      delay_ms(50);
+      speed++ ;
+      while(input(RAND)==0);
+      delay_ms(50);
+   } else ; 
+     if( speed > 9 ) speed = 0 ; 
+     else ; 
+     
+   setup_ccp1(ccp_pwm); set_pwm1_duty(1000*speed/10) ; 
+   
+   output_d(Code7Seg[speed]) ; 
+}
+
+}

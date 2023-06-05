@@ -1,0 +1,51 @@
+
+ROM used:   229/8192 (3%)
+            229/8192 (3%) including unused fragments
+
+            0.3 Average locations per line
+            13.5 Average locations per statement
+
+RAM used:   15/368 (4%) at main() level
+            20/368 (5%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   40    17 100  dotanso.c
+  810     0   0  C:\Program Files (x86)\PICC\Devices\16f887.h
+----- -----
+  850    17 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     97  42    0    158  3.3  ngat_timer1
+0     21   9    3             @DIV88
+ Inline         2             @PRINTF_U_9600_62_63
+0     62  27    0    174  2.2  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              17
+    Comments                135
+    Volume (V)              410
+    Difficulty (D)          5.2
+    Effort to implement (E) 2121
+    Time to implement (T)   2 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    117
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00030    45  0  
+00031-007FF   180  1819  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

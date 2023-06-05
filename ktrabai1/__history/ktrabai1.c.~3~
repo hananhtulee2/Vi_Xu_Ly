@@ -1,0 +1,34 @@
+#include<16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define btnON_OFF PIN_B0
+#define btnMODE    PIN_B1
+
+
+
+signed int8 MODE ;
+
+void main()
+{
+
+set_tris_b(0b00000011);
+set_tris_c(0b00000000);
+set_tris_d(0b00000000);
+
+MODE = -1 ;
+
+
+while(TRUE)
+{
+if (input(btnON_OFF) == 0) {
+   delay_ms(50) ; 
+   MODE += 1 ;
+
+   
+}
+else
+      output_c(0b00000000) ; 
+      output_d(0b00000000) ;
+}
+}

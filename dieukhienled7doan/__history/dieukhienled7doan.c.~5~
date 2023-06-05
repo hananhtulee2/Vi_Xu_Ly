@@ -1,0 +1,42 @@
+#include <16F887.h>
+#fuses INTRC 
+#use delay(clock = 8 MHZ)
+#define btnADJ PIN_B0 
+#define btnCLR PIN_B1
+
+unsigned int8 aryCode7seg[10]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90,0xff};
+unsigned int8 varCount ; 
+
+void main(){
+
+set_tris_b(0b00000011) ;
+set_tris_d(0b00000000) ; 
+
+
+varCount = 0 ; 
+output_d(aryCode7seg[varCount]) ; 
+
+WHILE(TRUE)
+{
+   if(input(btnADJ) == 0)
+   {
+      delay_ms(50); 
+      varCount++ ; 
+      if(varCount == 10)
+         varCount = 0 ; 
+      else ;  
+      output_d(aryCode7seg[varCount]);
+      while(input(btnADJ) == 0) ;
+         delay_ms(50);
+   }
+   else if(input(btnCLR) == 0)
+      {
+         varCount = 0 ;
+         output_d(aryCode7seg[varCount]) ; 
+      }
+   else ; 
+  
+   
+      
+}
+}

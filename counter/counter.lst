@@ -1,0 +1,96 @@
+CCS PCM C Compiler, Version 5.109, 43599               18-Apr-23 16:07
+
+               Filename:   E:\PIC 16F887\Code\counter.lst
+
+               ROM used:   48 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           6 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include <16F887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+.................... 
+.................... #list
+.................... 
+.................... #fuses INTRC_IO
+.................... #use delay(CLOCK=8MHz)
+.................... 
+.................... 
+.................... void main()
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  MOVLW  71
+0008:  BSF    03.5
+0009:  MOVWF  0F
+000A:  CLRF   10
+000B:  MOVF   0F,W
+000C:  BSF    03.6
+000D:  MOVF   09,W
+000E:  ANDLW  C0
+000F:  MOVWF  09
+0010:  BCF    03.6
+0011:  BCF    1F.4
+0012:  BCF    1F.5
+0013:  MOVLW  00
+0014:  BSF    03.6
+0015:  MOVWF  08
+0016:  BCF    03.5
+0017:  CLRF   07
+0018:  CLRF   08
+0019:  CLRF   09
+001A:  BCF    03.7
+.................... {
+.................... set_tris_a(0xFF);//RA4/T0CKI:0b***1****
+001B:  MOVLW  FF
+001C:  BSF    03.5
+001D:  BCF    03.6
+001E:  MOVWF  05
+.................... set_tris_d(0x00);
+001F:  MOVLW  00
+0020:  MOVWF  08
+.................... 
+.................... setup_timer_0(RTCC_DIV_1|RTCC_EXT_H_TO_L);
+0021:  MOVF   01,W
+0022:  ANDLW  C7
+0023:  IORLW  38
+0024:  MOVWF  01
+.................... set_timer0(0);    
+0025:  BCF    03.5
+0026:  CLRF   01
+.................... 
+.................... while(TRUE)
+.................... {
+.................... output_d(get_timer0());
+0027:  MOVF   01,W
+0028:  MOVWF  21
+0029:  BSF    03.5
+002A:  CLRF   08
+002B:  BCF    03.5
+002C:  MOVF   21,W
+002D:  MOVWF  08
+002E:  GOTO   027
+.................... }
+.................... }
+002F:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

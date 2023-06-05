@@ -1,0 +1,10 @@
+ÀÄquetled7doan
+   ÀÄmain  0/66  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
+      ÀÄdelay_msScanLED  0/118  Ram=5
+         ÃÄ@DIV1616  (Inline)  Ram=5
+         ÃÄ@DIV88  0/21  Ram=3
+         ÃÄ@delay_ms1  0/20  Ram=1
+         ÃÄ@DIV88  0/21  Ram=3
+         ÀÄ@delay_ms1  0/20  Ram=1

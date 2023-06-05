@@ -1,0 +1,305 @@
+CCS PCM C Compiler, Version 5.109, 43599               03-Apr-23 21:58
+
+               Filename:   E:\PIC 16F887\Code\quetled7doan\quetled7doan.lst
+
+               ROM used:   229 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   16 (4%) at main() level
+                           25 (7%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   0A3
+0003:  NOP
+.................... #include <16F887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+0004:  MOVF   30,W
+0005:  CLRF   78
+0006:  SUBWF  2F,W
+0007:  BTFSC  03.0
+0008:  GOTO   00C
+0009:  MOVF   2F,W
+000A:  MOVWF  77
+000B:  GOTO   018
+000C:  CLRF   77
+000D:  MOVLW  08
+000E:  MOVWF  31
+000F:  RLF    2F,F
+0010:  RLF    77,F
+0011:  MOVF   30,W
+0012:  SUBWF  77,W
+0013:  BTFSC  03.0
+0014:  MOVWF  77
+0015:  RLF    78,F
+0016:  DECFSZ 31,F
+0017:  GOTO   00F
+0018:  RETURN
+*
+0036:  CLRF   78
+0037:  CLRF   79
+0038:  CLRF   77
+0039:  CLRF   7A
+003A:  MOVF   32,W
+003B:  BTFSS  03.2
+003C:  GOTO   040
+003D:  MOVF   31,W
+003E:  BTFSC  03.2
+003F:  GOTO   05A
+0040:  MOVLW  10
+0041:  MOVWF  33
+0042:  BCF    03.0
+0043:  RLF    2F,F
+0044:  RLF    30,F
+0045:  RLF    77,F
+0046:  RLF    7A,F
+0047:  MOVF   32,W
+0048:  SUBWF  7A,W
+0049:  BTFSS  03.2
+004A:  GOTO   04D
+004B:  MOVF   31,W
+004C:  SUBWF  77,W
+004D:  BTFSS  03.0
+004E:  GOTO   056
+004F:  MOVF   31,W
+0050:  SUBWF  77,F
+0051:  BTFSS  03.0
+0052:  DECF   7A,F
+0053:  MOVF   32,W
+0054:  SUBWF  7A,F
+0055:  BSF    03.0
+0056:  RLF    78,F
+0057:  RLF    79,F
+0058:  DECFSZ 33,F
+0059:  GOTO   042
+.................... 
+.................... #list
+.................... 
+.................... #fuses INTRC_IO
+.................... #use delay(CLOCK=8MHz)
+*
+0019:  MOVLW  2F
+001A:  MOVWF  04
+001B:  BCF    03.7
+001C:  MOVF   00,W
+001D:  BTFSC  03.2
+001E:  GOTO   02C
+001F:  MOVLW  02
+0020:  MOVWF  78
+0021:  CLRF   77
+0022:  DECFSZ 77,F
+0023:  GOTO   022
+0024:  DECFSZ 78,F
+0025:  GOTO   021
+0026:  MOVLW  97
+0027:  MOVWF  77
+0028:  DECFSZ 77,F
+0029:  GOTO   028
+002A:  DECFSZ 00,F
+002B:  GOTO   01F
+002C:  RETURN
+.................... 
+.................... #define Q_TENS     PIN_E0
+.................... #define Q_UNITS    PIN_E1
+.................... unsigned char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+*
+00BA:  MOVLW  C0
+00BB:  BCF    03.6
+00BC:  MOVWF  20
+00BD:  MOVLW  F9
+00BE:  MOVWF  21
+00BF:  MOVLW  A4
+00C0:  MOVWF  22
+00C1:  MOVLW  B0
+00C2:  MOVWF  23
+00C3:  MOVLW  99
+00C4:  MOVWF  24
+00C5:  MOVLW  92
+00C6:  MOVWF  25
+00C7:  MOVLW  82
+00C8:  MOVWF  26
+00C9:  MOVLW  F8
+00CA:  MOVWF  27
+00CB:  MOVLW  80
+00CC:  MOVWF  28
+00CD:  MOVLW  90
+00CE:  MOVWF  29
+.................... unsigned int8 Count;
+.................... void delay_msScanLED(unsigned int16 t);
+.................... void main()
+*
+00A3:  MOVF   03,W
+00A4:  ANDLW  1F
+00A5:  MOVWF  03
+00A6:  MOVLW  71
+00A7:  BSF    03.5
+00A8:  MOVWF  0F
+00A9:  CLRF   10
+00AA:  MOVF   0F,W
+00AB:  BSF    03.6
+00AC:  MOVF   09,W
+00AD:  ANDLW  C0
+00AE:  MOVWF  09
+00AF:  BCF    03.6
+00B0:  BCF    1F.4
+00B1:  BCF    1F.5
+00B2:  MOVLW  00
+00B3:  BSF    03.6
+00B4:  MOVWF  08
+00B5:  BCF    03.5
+00B6:  CLRF   07
+00B7:  CLRF   08
+00B8:  CLRF   09
+00B9:  BCF    03.7
+.................... {
+.................... set_tris_e(0b00000011);
+*
+00CF:  BSF    03.5
+00D0:  BSF    09.0
+00D1:  BSF    09.1
+00D2:  BCF    09.2
+00D3:  BCF    09.3
+.................... set_tris_d(0b00000000);
+00D4:  MOVLW  00
+00D5:  MOVWF  08
+.................... 
+.................... while(TRUE)
+.................... {
+.................... for(Count=0;Count<=99;Count++)
+00D6:  BCF    03.5
+00D7:  CLRF   2A
+00D8:  MOVF   2A,W
+00D9:  SUBLW  63
+00DA:  BTFSS  03.0
+00DB:  GOTO   0E3
+.................... {
+.................... delay_msScanLED(300);
+00DC:  MOVLW  01
+00DD:  MOVWF  2C
+00DE:  MOVLW  2C
+00DF:  MOVWF  2B
+00E0:  GOTO   02D
+00E1:  INCF   2A,F
+00E2:  GOTO   0D8
+.................... }
+00E3:  GOTO   0D7
+.................... }
+.................... }
+.................... 
+00E4:  SLEEP
+.................... void delay_msScanLED(unsigned int16 t)
+.................... {
+.................... unsigned int16 i;
+.................... for(i=0;i<t/10;i++)
+*
+002D:  CLRF   2E
+002E:  CLRF   2D
+002F:  MOVF   2C,W
+0030:  MOVWF  30
+0031:  MOVF   2B,W
+0032:  MOVWF  2F
+0033:  CLRF   32
+0034:  MOVLW  0A
+0035:  MOVWF  31
+*
+005A:  MOVF   79,W
+005B:  MOVWF  7A
+005C:  MOVF   2E,W
+005D:  SUBWF  7A,W
+005E:  BTFSS  03.0
+005F:  GOTO   0A0
+0060:  BTFSS  03.2
+0061:  GOTO   066
+0062:  MOVF   78,W
+0063:  SUBWF  2D,W
+0064:  BTFSC  03.0
+0065:  GOTO   0A0
+.................... {
+.................... output_low(Q_TENS);
+0066:  BSF    03.5
+0067:  BCF    09.0
+0068:  BCF    03.5
+0069:  BCF    09.0
+.................... output_high(Q_UNITS);
+006A:  BSF    03.5
+006B:  BCF    09.1
+006C:  BCF    03.5
+006D:  BSF    09.1
+.................... output_d(Code7Seg[Count/10]);
+006E:  MOVF   2A,W
+006F:  MOVWF  2F
+0070:  MOVLW  0A
+0071:  MOVWF  30
+0072:  CALL   004
+0073:  MOVLW  20
+0074:  ADDWF  78,W
+0075:  MOVWF  04
+0076:  BCF    03.7
+0077:  MOVF   00,W
+0078:  MOVWF  2F
+0079:  BSF    03.5
+007A:  CLRF   08
+007B:  BCF    03.5
+007C:  MOVF   2F,W
+007D:  MOVWF  08
+.................... delay_ms(5);
+007E:  MOVLW  05
+007F:  MOVWF  2F
+0080:  CALL   019
+.................... 
+.................... output_high(Q_TENS);
+0081:  BSF    03.5
+0082:  BCF    09.0
+0083:  BCF    03.5
+0084:  BSF    09.0
+.................... output_low(Q_UNITS);
+0085:  BSF    03.5
+0086:  BCF    09.1
+0087:  BCF    03.5
+0088:  BCF    09.1
+.................... output_d(Code7Seg[Count%10]);
+0089:  MOVF   2A,W
+008A:  MOVWF  2F
+008B:  MOVLW  0A
+008C:  MOVWF  30
+008D:  CALL   004
+008E:  MOVLW  20
+008F:  ADDWF  77,W
+0090:  MOVWF  04
+0091:  BCF    03.7
+0092:  MOVF   00,W
+0093:  MOVWF  2F
+0094:  BSF    03.5
+0095:  CLRF   08
+0096:  BCF    03.5
+0097:  MOVF   2F,W
+0098:  MOVWF  08
+.................... delay_ms(5);
+0099:  MOVLW  05
+009A:  MOVWF  2F
+009B:  CALL   019
+009C:  INCF   2D,F
+009D:  BTFSC  03.2
+009E:  INCF   2E,F
+009F:  GOTO   02F
+.................... }
+00A0:  BCF    0A.3
+00A1:  BCF    0A.4
+00A2:  GOTO   0E1 (RETURN)
+.................... }
+
+Configuration Fuses:
+   Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

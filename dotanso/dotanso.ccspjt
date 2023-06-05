@@ -1,0 +1,49 @@
+[PROJECT]
+Target=dotanso.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=dotanso.c
+[dotanso.c]
+Type=4
+[mru-list]
+1=dotanso.c
+
+[defines]
+buildcount=12
+
+[ProjectLog]
+Days=1
+D1=28-05-2023
+D1_L=11
+D1_L1=[82254]Stopped Editing.
+D1_L2=[82413]Started Editing.
+D1_L3=[82810]Stopped Editing.
+TotalEdit=7
+TotalDebug=0
+D1_E=7
+D1_D=0
+D1_L4=[82810]Project Closed.
+D1_L5=[82823]Project Opened.
+D1_L6=[82824]Project Closed.
+D1_L7=[82826]Project Opened.
+D1_L8=[82877]Started Editing.
+D1_L9=[83295]Stopped Editing.
+D1_L10=[83368]Started Editing.
+D1_L11=[85534]Project Closed.
+
+[Opened Files]
+1=dotanso.c
+t1=1
+2=..\DeHK2-2020-2021\bai1.c
+t2=9
+3=..\DeHK2-2020-2021\cau1.c
+t3=9
+Count=3
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=dotanso (main)

@@ -1,0 +1,46 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define ON   Pin_B1 
+#define LED  Pin_E0
+
+#int_ext 
+void ngat_ngoai(){
+   
+
+
+}
+unsigned int8 mode ; 
+unsigned int8 product = 0 ; 
+unsigned int8 box = 0 ;  
+char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+
+void main(){
+
+set_tris_a(0xff);
+set_tris_c(0x00);
+set_tris_d(0x00); 
+set_tris_e(0b0001);
+set_tris_b(0x00);
+
+setup_timer_0(RTCC_DIV_1|RTCC_EXT_H_TO_L);
+set_timer0(0);  
+
+
+while(true){
+   product = get_timer0() ;
+   if(Product==25) 
+   {
+      set_timer0(1);
+      product=1;
+      box++;
+   }
+   
+   //xuat san pham ra led 
+   output_c(Code7Seg[product/10]);
+   output_d(Code7Seg[product%10]);
+
+}
+}
+

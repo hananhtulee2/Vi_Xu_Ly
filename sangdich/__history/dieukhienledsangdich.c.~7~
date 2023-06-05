@@ -1,0 +1,58 @@
+#include <16F887.h>
+#fuses INTRC 
+#use delay(clock = 8 MHZ)
+#define btn_DIR  PIN_B0 
+#define btn_CLR  PIN_B1
+
+
+unsigned int8 sangdich[5] = {0x0001,0x0010,0x0100,0x1000,0x0000} ;
+unsigned int8 tatdich[5] = {0x1111,0x0111,0x0011,0x0001,0x0000}; 
+
+signed int8 direction ;  
+signed int8 i ; 
+
+void delay_offms(){
+}
+
+void sangdich()
+{
+   for( i = 0 ; i <= 4 ; i++){
+   output_d(sangdich[i]); 
+   }
+}
+
+
+
+
+void tatdich(){
+for( int8 i = 0 ; i <= 4 ; i++){
+   output_d(tatdich[i]); 
+   }
+}
+
+
+
+
+
+
+void main(){
+
+set_tris_b(0b00000011) ;
+set_tris_d(0b00000000) ; 
+
+direction = 1 ; 
+ 
+ 
+
+WHILE(TRUE)
+{
+if (direction == 1)
+   {
+   sangdich();
+   direction = 0 ; 
+   }
+else 
+   tatdich();
+   direction = 1 ; 
+}
+}

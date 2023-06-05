@@ -1,0 +1,48 @@
+[PROJECT]
+Target=quetled7doan.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=quetled7doan.c
+[quetled7doan.c]
+Type=4
+[mru-list]
+1=quetled7doan.c
+
+[defines]
+buildcount=3
+
+[ProjectLog]
+Days=1
+D1=03-04-2023
+D1_L=8
+D1_L1=[47571]Started Editing.
+D1_L2=[47876]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L3=[50262]Project Closed.
+D1_L4=[79113]Project Opened.
+D1_L5=[79115]Project Closed.
+D1_L6=[79116]Project Opened.
+D1_L7=[79135]Started Editing.
+D1_L8=[79144]Project Closed.
+
+[Opened Files]
+1=..\dieukhiennutnhankhongchongdoi\nutnhankhongchongdoi.c
+t1=1
+2=..\ktrabai1\ktrabai1.c
+t2=1
+3=quetled7doan.c
+t3=14
+Count=4
+4=..\ktrabai1\lcd-adc.c
+t4=14
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=quetled7doan (main)

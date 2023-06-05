@@ -1,0 +1,42 @@
+[PROJECT]
+Target=ledsangdich+sangdan.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=ledsangdich+sangdan.c
+[ledsangdich+sangdan.c]
+Type=4
+[mru-list]
+1=ledsangdich+sangdan.c
+
+[defines]
+buildcount=7
+
+[Opened Files]
+1=ledsangdich+sangdan.c
+t1=13
+Count=1
+[Units]
+Count=1
+1=ledsangdich+sangdan (main)
+
+[ProjectLog]
+Days=3
+D1=30-03-2023
+D1_L=1
+D1_L1=[82785]Stopped Editing.
+TotalEdit=23
+TotalDebug=0
+D2=31-03-2023
+D2_E=23
+D2_D=0
+D2_L=1
+D2_L1=[1339]Project Closed.
+D3=02-04-2023
+D3_L=2
+D3_L1=[79070]Project Opened.
+D3_L2=[79077]Project Closed.
+
+[fileformats]
+forcecoff=0

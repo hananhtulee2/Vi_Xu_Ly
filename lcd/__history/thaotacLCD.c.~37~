@@ -1,0 +1,22 @@
+#include <16F877a.h>
+#fuses XT,NOWDT,NOPROTECT,NOLVP
+#use delay(clock=4000000)
+
+#define LCD_ENABLE_PIN PIN_D0
+#define LCD_RS_PIN PIN_D1
+#define LCD_RW_PIN PIN_D2
+#define LCD_DATA4 PIN_D4
+#define LCD_DATA5 PIN_D5
+#define LCD_DATA6 PIN_D6
+#define LCD_DATA7 PIN_D7
+#include <LCD.c>
+void main()
+{
+set_tris_D(0x00);
+lcd_init();
+while(1)
+{
+lcd_gotoxy(0,0);
+lcd_putc("fReady...");
+delay_ms(100);
+}

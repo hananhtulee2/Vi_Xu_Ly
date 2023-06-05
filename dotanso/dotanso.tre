@@ -1,0 +1,8 @@
+ÀÄdotanso
+   ÃÄMAIN  0/62  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄ@cinit2  (Inline)  Ram=0
+   ÀÄngat_timer1  0/97  Ram=0
+      ÀÄ@PRINTF_U_9600_62_63  (Inline)  Ram=2
+         ÃÄ@DIV88  0/21  Ram=3
+         ÀÄ@DIV88  0/21  Ram=3

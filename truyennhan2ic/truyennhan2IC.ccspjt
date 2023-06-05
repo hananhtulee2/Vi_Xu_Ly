@@ -1,0 +1,45 @@
+[PROJECT]
+Target=truyennhan2IC.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=truyennhan2IC.c
+[truyennhan2IC.c]
+Type=4
+[mru-list]
+1=truyennhan2IC.c
+
+[defines]
+buildcount=4
+
+[Opened Files]
+1=truyennhan2IC.c
+t1=21
+Count=1
+2=uart.c
+t2=1
+
+[ProjectLog]
+Days=1
+D1=14-05-2023
+D1_L=9
+D1_L1=[203]Stopped Editing.
+D1_L2=[271]Started Editing.
+D1_L3=[466]Stopped Editing.
+TotalEdit=17
+TotalDebug=0
+D1_E=17
+D1_D=0
+D1_L4=[466]Project Closed.
+D1_L5=[752]Project Opened.
+D1_L6=[807]Started Editing.
+D1_L7=[1285]Project Closed.
+D1_L8=[50407]Project Opened.
+D1_L9=[50409]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=truyennhan2IC (main)

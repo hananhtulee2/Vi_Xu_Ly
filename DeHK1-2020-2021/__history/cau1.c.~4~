@@ -1,0 +1,26 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define  RAND  PIN_B0
+
+
+unsigned int8 mode ;
+unsigned int8 speed ; 
+
+
+void main(){
+   set_tris_d(0xff); 
+   set_tris_b(0x00);
+   set_tris_c(0x00);
+   
+   setup_ccp1(ccp_off); output_low(pin_C2);
+   
+   setup_timer_2(T2_DIV_BY_16,124,1);
+   set_timer2(0);
+
+while(true){
+
+}
+
+}

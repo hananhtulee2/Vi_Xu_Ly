@@ -1,0 +1,47 @@
+[PROJECT]
+Target=cau2.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=cau2.c
+[cau2.c]
+Type=4
+[mru-list]
+1=cau2.c
+
+[defines]
+buildcount=7
+
+[Opened Files]
+1=..\DeHK2-2020-2021\cau1.c
+t1=13
+2=..\DeHK2-2020-2021\cau2.c
+t2=1
+3=cau1.c
+t3=3
+4=cau2.c
+t4=3
+Count=4
+[Units]
+Count=1
+1=cau2 (main)
+
+[ProjectLog]
+Days=1
+D1=30-05-2023
+D1_L=7
+D1_L1=[1533]Stopped Editing.
+TotalEdit=9
+TotalDebug=0
+D1_E=9
+D1_D=0
+D1_L2=[3741]Project Closed.
+D1_L3=[53666]Project Opened.
+D1_L4=[53668]Project Closed.
+D1_L5=[53670]Project Opened.
+D1_L6=[53819]Started Editing.
+D1_L7=[55513]Project Closed.
+
+[fileformats]
+forcecoff=0

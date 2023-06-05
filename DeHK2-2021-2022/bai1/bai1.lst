@@ -1,0 +1,185 @@
+CCS PCM C Compiler, Version 5.109, 43599               22-May-23 00:34
+
+               Filename:   E:\PIC 16F887\Code\DeHK2-2021-2022\bai1.lst
+
+               ROM used:   122 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   17 (5%) at main() level
+                           19 (5%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <16F887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+0004:  MOVF   2C,W
+0005:  CLRF   78
+0006:  SUBWF  2B,W
+0007:  BTFSC  03.0
+0008:  GOTO   00C
+0009:  MOVF   2B,W
+000A:  MOVWF  77
+000B:  GOTO   018
+000C:  CLRF   77
+000D:  MOVLW  08
+000E:  MOVWF  2D
+000F:  RLF    2B,F
+0010:  RLF    77,F
+0011:  MOVF   2C,W
+0012:  SUBWF  77,W
+0013:  BTFSC  03.0
+0014:  MOVWF  77
+0015:  RLF    78,F
+0016:  DECFSZ 2D,F
+0017:  GOTO   00F
+0018:  RETURN
+.................... 
+.................... #list
+.................... 
+.................... #fuses INTRC_IO
+.................... #use delay(CLOCK=8MHz)
+.................... 
+.................... 
+.................... unsigned char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+*
+0030:  MOVLW  C0
+0031:  BCF    03.6
+0032:  MOVWF  20
+0033:  MOVLW  F9
+0034:  MOVWF  21
+0035:  MOVLW  A4
+0036:  MOVWF  22
+0037:  MOVLW  B0
+0038:  MOVWF  23
+0039:  MOVLW  99
+003A:  MOVWF  24
+003B:  MOVLW  92
+003C:  MOVWF  25
+003D:  MOVLW  82
+003E:  MOVWF  26
+003F:  MOVLW  F8
+0040:  MOVWF  27
+0041:  MOVLW  80
+0042:  MOVWF  28
+0043:  MOVLW  90
+0044:  MOVWF  29
+.................... unsigned int8 Count;
+.................... 
+....................  
+.................... void main()
+*
+0019:  MOVF   03,W
+001A:  ANDLW  1F
+001B:  MOVWF  03
+001C:  MOVLW  71
+001D:  BSF    03.5
+001E:  MOVWF  0F
+001F:  CLRF   10
+0020:  MOVF   0F,W
+0021:  BSF    03.6
+0022:  MOVF   09,W
+0023:  ANDLW  C0
+0024:  MOVWF  09
+0025:  BCF    03.6
+0026:  BCF    1F.4
+0027:  BCF    1F.5
+0028:  MOVLW  00
+0029:  BSF    03.6
+002A:  MOVWF  08
+002B:  BCF    03.5
+002C:  CLRF   07
+002D:  CLRF   08
+002E:  CLRF   09
+002F:  BCF    03.7
+.................... {
+.................... 
+.................... set_tris_b(0b00000000);
+*
+0045:  MOVLW  00
+0046:  BSF    03.5
+0047:  MOVWF  06
+.................... set_tris_d(0b00000000);
+0048:  MOVWF  08
+.................... 
+.................... setup_timer_0(RTCC_DIV_1|RTCC_EXT_H_TO_L);
+0049:  MOVF   01,W
+004A:  ANDLW  C7
+004B:  IORLW  38
+004C:  MOVWF  01
+.................... set_timer0(0);    
+004D:  BCF    03.5
+004E:  CLRF   01
+.................... 
+.................... while(TRUE)
+.................... {
+.................... Count = get_timer0();
+004F:  MOVF   01,W
+0050:  MOVWF  2A
+.................... if(Count > 12 ){ 
+0051:  MOVF   2A,W
+0052:  SUBLW  0C
+0053:  BTFSC  03.0
+0054:  GOTO   058
+....................    Count = 1 ;
+0055:  MOVLW  01
+0056:  MOVWF  2A
+....................    set_timer0(1); 
+0057:  MOVWF  01
+.................... }
+.................... output_b(Code7Seg[Count%10]) ;
+0058:  MOVF   2A,W
+0059:  MOVWF  2B
+005A:  MOVLW  0A
+005B:  MOVWF  2C
+005C:  CALL   004
+005D:  MOVLW  20
+005E:  ADDWF  77,W
+005F:  MOVWF  04
+0060:  BCF    03.7
+0061:  MOVF   00,W
+0062:  MOVWF  2B
+0063:  BSF    03.5
+0064:  CLRF   06
+0065:  BCF    03.5
+0066:  MOVF   2B,W
+0067:  MOVWF  06
+.................... output_d(Code7Seg[Count/10]) ;
+0068:  MOVF   2A,W
+0069:  MOVWF  2B
+006A:  MOVLW  0A
+006B:  MOVWF  2C
+006C:  CALL   004
+006D:  MOVLW  20
+006E:  ADDWF  78,W
+006F:  MOVWF  04
+0070:  BCF    03.7
+0071:  MOVF   00,W
+0072:  MOVWF  2B
+0073:  BSF    03.5
+0074:  CLRF   08
+0075:  BCF    03.5
+0076:  MOVF   2B,W
+0077:  MOVWF  08
+0078:  GOTO   04F
+.................... 
+.................... }
+.................... }
+0079:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

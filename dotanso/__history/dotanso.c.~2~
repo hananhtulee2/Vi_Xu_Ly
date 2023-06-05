@@ -1,0 +1,29 @@
+#include <16f887.h>
+#fuse hs 
+#use delay(clock =20M)
+#use rs232(BAUD=9600,BITS=8,STOP=1,PARITY=N,RCV=PIN_C7,XMIT=PIN_C6)
+
+unsigned int8 bdt ; 
+
+#int_timer1
+void ngat_timer1(){
+   
+}
+
+
+void main(){
+   set_tris_c(0x80);
+   
+   set_timer_0(T0_DIV_1|T0_EXT_L_TO_H); 
+   set_timer0(0);
+   
+   set_timer_1(T1_DIV_BY_8|T1_INTERNAL);
+   set_timer1(3036);
+   
+   enable_interrupts(global);
+   enable_interrupts(int_timer1);
+   
+   while(true){
+   }
+
+}

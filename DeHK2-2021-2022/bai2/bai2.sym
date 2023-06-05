@@ -1,0 +1,115 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     lcd
+008     lcdlat
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     ND
+021     @PRINTF_U_733.P1
+021     @PSTRINGCN7_733.P2
+021     lcd_init.i
+021-024 @SFTOI.P1
+021     MAIN.@SCRATCH1
+022     @PRINTF_U_733.P1
+022-025 lcd_init.LCD_INIT_STRING
+022     MAIN.@SCRATCH2
+022     @PSTRINGCN7_733.@SCRATCH1
+023-024 @ITOF.P1
+023-026 @DIVFF.P2
+023     @DIV88.P3
+023     @PSTRINGCN7_733.@SCRATCH2
+024     @DIV88.P1
+024     @PSTRINGCN7_733.@SCRATCH3
+025     lcd_putc.c
+025     @PSTRINGCN7_733.@SCRATCH4
+025     @DIV88.@SCRATCH1
+026     @delay_ms1.P1
+026     lcd_gotoxy.x
+026     lcd_init.@SCRATCH1
+027-02A @DIVFF.P1
+027     lcd_gotoxy.y
+028     lcd_gotoxy.address
+029     lcd_gotoxy.@SCRATCH1
+02A     lcd_send_byte.address
+02B     lcd_send_byte.n
+02B     @DIVFF.@SCRATCH1
+02C     lcd_read_byte.low
+02C     lcd_send_byte.@SCRATCH1
+02C     @DIVFF.@SCRATCH2
+02D     lcd_read_byte.high
+02D     lcd_send_nibble.n
+02D     @DIVFF.@SCRATCH3
+02E     lcd_read_byte.@SCRATCH1
+02E     @DIVFF.@SCRATCH4
+02F     @DIVFF.@SCRATCH5
+030     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const756.call
+00000A  @delay_ms1
+00001E  lcd_send_nibble
+00002B  lcd_read_nibble
+000031  lcd_send_byte
+000037  lcd_read_byte
+000071  lcd_init
+0000AF  @ITOF
+0000CE  @DIVFF
+00019A  @SFTOI
+0001BB  lcd_gotoxy
+0001CD  lcd_putc
+0001F9  @PSTRINGCN7_733
+000252  @DIV88
+000267  @PRINTF_U_733
+00029E  @cinit1
+00029E  MAIN
+0002B4  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\DeHK2-2021-2022\
+
+Project Files:
+    bai2.c                                                  [22-May-23 00:45  CRC=62055676]
+    C:\Program Files (x86)\PICC\Devices\16F887.h            [06-May-22 15:52  CRC=DB832FED]
+    C:\Program Files (x86)\PICC\Drivers\lcd.c               [22-Feb-16 10:05  CRC=D1A6378A]
+
+Source signature=E0D4F577
+Program memory checksum=0000
+Hex file CRC=FD1F
+
+Units:
+    E:\PIC 16F887\Code\DeHK2-2021-2022\bai2 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   bai2.xsym
+    Errors:      bai2.err
+    Ext Symbols: bai2.esym
+    INHX8:       bai2.hex
+    Symbols:     bai2.sym
+    List:        bai2.lst
+    Debug/COFF:  bai2.cof
+    Project:     bai2.ccspjt
+    Call Tree:   bai2.tre
+    Statistics:  bai2.STA

@@ -1,0 +1,29 @@
+[PROJECT]
+Target=dip4led7seg.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=dip4led7seg.c
+[dip4led7seg.c]
+Type=4
+[mru-list]
+1=dip4led7seg.c
+
+[defines]
+buildcount=2
+
+[ProjectLog]
+Days=1
+D1=02-04-2023
+D1_L=2
+D1_L1=[79471]Stopped Editing.
+D1_L2=[79901]Project Closed.
+
+[Opened Files]
+1=..\dieukhiennutnhankhongchongdoi\nutnhankhongchongdoi.c
+t1=1
+Count=1
+[Units]
+Count=1
+1=dip4led7seg (main)

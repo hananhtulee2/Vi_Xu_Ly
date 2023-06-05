@@ -1,0 +1,49 @@
+#include <16F887.h>
+#fuses INTRC 
+#use delay(clock = 8 MHZ)
+#define btn_DIR  PIN_B0 
+#define btn_CLR  PIN_B1
+
+unsigned int8 sangdich_array[5] = {0b0001,0b0010,0b0100,0b1000,0b0000} ;
+unsigned int8 tatdich_array[5] = {0b1111,0b0111,0b0011,0b0001,0b0000}; 
+
+signed int8 direction ;  
+signed int8 i ; 
+
+void sangdich_motor()
+{
+   for( i = 0 ; i <= 4 ; i++){
+   output_d(sangdich_array[i]); 
+   delay_ms(500);
+   }
+}
+
+void tatdich_motor(){
+for( i = 0 ; i <= 4 ; i++){
+   output_d(tatdich_array[i]); 
+   delay_ms(500);
+   }
+}
+
+void main(){
+
+
+set_tris_d(0b0000) ; 
+
+direction = 1 ; 
+
+WHILE(TRUE)
+{
+   if (direction == 1)
+   {
+      sangdich_motor();
+      direction = 0 ; 
+   }
+   else 
+   {
+      tatdich_motor();
+      direction = 1 ; 
+   }
+}
+}
+

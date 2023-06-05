@@ -1,0 +1,41 @@
+#include <16f887.h>
+#fuses intrc
+#device adc =10 
+#use delay(clock=8M)
+#include <lcd.c>       
+
+int8 Value1,Value2 ; 
+
+
+void main(){
+
+   set_tris_a(0xFF);
+   set_tris_b(0xFF);
+   set_tris_e(0xFF);
+   
+   setup_adc_ports(sAN0|sAN5|sAN11|VSS_VDD);
+   setup_adc(ADC_CLOCK_INTERNAL);
+while(TRUE){
+   set_adc_channel(0);
+   delay_us(20);
+   Value1 = read_adc()/2.046;
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"A00=%04Lu",Value);
+   
+   set_adc_channel(5);
+   delay_us(20);
+   Value2 = read_adc()/2.046;
+   lcd_gotoxy(1,10);
+   printf(lcd_putc,"T=%03Lu",Value);
+   lcd_putc(223);
+   lcd_putc('C');
+
+}
+}
+
+
+                     
+
+   
+   
+

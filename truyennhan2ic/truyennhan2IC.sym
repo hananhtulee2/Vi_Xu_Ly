@@ -1,0 +1,76 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     temp
+021-022 ndo
+023     @delay_ms1.P1
+023-026 @SFTOI.P2
+023     main.@SCRATCH1
+024     main.@SCRATCH2
+025-028 @DIVFF.P1
+025-026 @ITOF.P2
+029-02C @DIVFF.P1
+02D     @DIVFF.@SCRATCH1
+02E     @DIVFF.@SCRATCH2
+02F     @DIVFF.@SCRATCH3
+030     @DIVFF.@SCRATCH4
+031     @DIVFF.@SCRATCH5
+032     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @ITOF
+000023  @DIVFF
+0000EF  @SFTOI
+000110  @delay_ms1
+000124  main
+000124  @cinit1
+000145  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\
+
+Project Files:
+    truyennhan2IC.c                                         [13-May-23 23:58  CRC=BBA81822]
+    C:\Program Files (x86)\PICC\Devices\16F887.h            [06-May-22 15:52  CRC=DB832FED]
+
+Source signature=72AE77FC
+Program memory checksum=0000
+Hex file CRC=ED65
+
+Units:
+    E:\PIC 16F887\Code\truyennhan2IC (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   truyennhan2IC.xsym
+    Errors:      truyennhan2IC.err
+    Ext Symbols: truyennhan2IC.esym
+    INHX8:       truyennhan2IC.hex
+    Symbols:     truyennhan2IC.sym
+    List:        truyennhan2IC.lst
+    Debug/COFF:  truyennhan2IC.cof
+    Project:     truyennhan2IC.ccspjt
+    Call Tree:   truyennhan2IC.tre
+    Statistics:  truyennhan2IC.STA

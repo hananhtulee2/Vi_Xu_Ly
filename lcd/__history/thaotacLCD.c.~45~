@@ -1,0 +1,24 @@
+#include <16F877.h>
+#fuses XT,NOWDT,NOPROTECT,NOLVP
+#use delay(clock=4000000)
+
+#define btn_UP  PIN_B0
+#define btn_DOWN  PIN_B1
+#define btn_STP PIN_B2 
+#include <LCD.c>
+
+signed int8 varCount ; 
+void main()
+{
+varCount = 0 ; 
+lcd_init();
+printf(lcd_putc,"Value = %03u",varCount) ;
+
+set_tris_b(0xff);
+port_b_pullups(0xff) ;
+WHILE(TRUE) 
+{
+
+
+}
+}

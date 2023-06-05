@@ -1,0 +1,194 @@
+CCS PCM C Compiler, Version 5.109, 43599               22-May-23 01:17
+
+               Filename:   E:\PIC 16F887\Code\ff.lst
+
+               ROM used:   127 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   7 (2%) at main() level
+                           7 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include<16F887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+.................... 
+.................... #list
+.................... 
+.................... #fuses INTRC_IO
+.................... #use delay(CLOCK=8MHz)  //Fosc=8 MHz
+.................... #define btnFF     PIN_B0
+.................... #define btnREV    PIN_B1
+.................... 
+.................... void main()
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  MOVLW  71
+0008:  BSF    03.5
+0009:  MOVWF  0F
+000A:  CLRF   10
+000B:  MOVF   0F,W
+000C:  MOVLW  FF
+000D:  BCF    03.5
+000E:  MOVWF  20
+000F:  BSF    03.5
+0010:  BSF    03.6
+0011:  MOVF   09,W
+0012:  ANDLW  C0
+0013:  MOVWF  09
+0014:  BCF    03.6
+0015:  BCF    1F.4
+0016:  BCF    1F.5
+0017:  MOVLW  00
+0018:  BSF    03.6
+0019:  MOVWF  08
+001A:  BCF    03.5
+001B:  CLRF   07
+001C:  CLRF   08
+001D:  CLRF   09
+001E:  BCF    03.7
+.................... {
+.................... set_tris_b(0b11111111);
+001F:  MOVLW  FF
+0020:  BSF    03.5
+0021:  BCF    03.6
+0022:  MOVWF  06
+.................... port_b_pullups(0b11111111);
+0023:  MOVWF  15
+0024:  BCF    01.7
+.................... set_tris_c(0b11111001);
+0025:  MOVLW  F9
+0026:  MOVWF  07
+0027:  BCF    03.5
+0028:  MOVWF  20
+.................... //PR2=(Period*Fosc)/(4*DIV)-1=(0.8*1000*8)/(4*16) -1 = 249
+.................... setup_timer_2(T2_DIV_BY_16,249,1);//T=PWM Period = 2ms; DIV=16;PR2=249
+0029:  MOVLW  00
+002A:  MOVWF  78
+002B:  IORLW  06
+002C:  MOVWF  12
+002D:  MOVLW  F9
+002E:  BSF    03.5
+002F:  MOVWF  12
+.................... 
+.................... setup_ccp1(CCP_OFF);output_low(PIN_C2);
+0030:  MOVLW  F0
+0031:  BCF    03.5
+0032:  ANDWF  17,F
+0033:  BCF    20.2
+0034:  MOVF   20,W
+0035:  BSF    03.5
+0036:  MOVWF  07
+0037:  BCF    03.5
+0038:  BCF    07.2
+.................... setup_ccp2(CCP_OFF);output_low(PIN_C1);
+0039:  MOVLW  F0
+003A:  ANDWF  1D,F
+003B:  BCF    20.1
+003C:  MOVF   20,W
+003D:  BSF    03.5
+003E:  MOVWF  07
+003F:  BCF    03.5
+0040:  BCF    07.1
+.................... 
+.................... while(TRUE)
+.................... {
+.................... if(input(btnFF)==0)
+0041:  BSF    03.5
+0042:  BSF    06.0
+0043:  BCF    03.5
+0044:  BTFSC  06.0
+0045:  GOTO   062
+.................... {
+.................... //value=(Tpwm*Duty*Fosc)/(100%*DIV)=(2ms*70%*8MHz)/(100%*16)
+.................... set_pwm1_duty((int16)700);//Duty =70%
+0046:  MOVLW  AF
+0047:  MOVWF  15
+0048:  MOVF   17,W
+0049:  ANDLW  CF
+004A:  MOVWF  17
+.................... setup_ccp1(CCP_PWM);
+004B:  BCF    20.2
+004C:  MOVF   20,W
+004D:  BSF    03.5
+004E:  MOVWF  07
+004F:  BCF    03.5
+0050:  BCF    07.2
+0051:  MOVLW  0C
+0052:  MOVWF  17
+0053:  BSF    03.5
+0054:  CLRF   1B
+0055:  CLRF   1C
+0056:  MOVLW  01
+0057:  MOVWF  1D
+.................... setup_ccp2(CCP_OFF);output_low(PIN_C1);
+0058:  MOVLW  F0
+0059:  BCF    03.5
+005A:  ANDWF  1D,F
+005B:  BCF    20.1
+005C:  MOVF   20,W
+005D:  BSF    03.5
+005E:  MOVWF  07
+005F:  BCF    03.5
+0060:  BCF    07.1
+.................... }
+0061:  GOTO   07D
+.................... else
+.................... if(input(btnREV)==0)
+0062:  BSF    03.5
+0063:  BSF    06.1
+0064:  BCF    03.5
+0065:  BTFSC  06.1
+0066:  GOTO   07D
+.................... {
+.................... //value=(Tpwm*Duty*Fosc)/(100%*DIV)=(2ms*30%*8MHz)/(100%*16)
+.................... set_pwm2_duty((int16)300);//Duty =30%
+0067:  MOVLW  4B
+0068:  MOVWF  1B
+0069:  MOVF   1D,W
+006A:  ANDLW  CF
+006B:  MOVWF  1D
+.................... setup_ccp2(CCP_PWM);
+006C:  BCF    20.1
+006D:  MOVF   20,W
+006E:  BSF    03.5
+006F:  MOVWF  07
+0070:  BCF    03.5
+0071:  BCF    07.1
+0072:  MOVLW  0C
+0073:  MOVWF  1D
+.................... setup_ccp1(CCP_OFF);output_low(PIN_C2);
+0074:  MOVLW  F0
+0075:  ANDWF  17,F
+0076:  BCF    20.2
+0077:  MOVF   20,W
+0078:  BSF    03.5
+0079:  MOVWF  07
+007A:  BCF    03.5
+007B:  BCF    07.2
+.................... }
+007C:  GOTO   07D
+.................... else;
+007D:  GOTO   041
+.................... }
+.................... }
+007E:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

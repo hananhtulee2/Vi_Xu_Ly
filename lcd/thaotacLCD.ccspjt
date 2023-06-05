@@ -1,0 +1,66 @@
+[PROJECT]
+Target=thaotacLCD.hex
+Processor_Text=PIC16F877
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=thaotacLCD.c
+[thaotacLCD.c]
+Type=4
+[mru-list]
+1=thaotacLCD.c
+
+[defines]
+buildcount=43
+
+[Opened Files]
+1=thaotacLCD.c
+t1=13
+Count=1
+2=C:\Program Files (x86)\PICC\Drivers\LCD.c
+t2=317
+
+[ProjectLog]
+Days=3
+D1=24-03-2023
+D1_L=24
+D1_L1=[76108]Stopped Editing.
+D1_L2=[77848]Started Editing.
+D1_L3=[78148]Stopped Editing.
+D1_L4=[78483]Started Editing.
+D1_L5=[79050]Stopped Editing.
+TotalEdit=61
+TotalDebug=0
+D1_E=61
+D1_D=0
+D1_L6=[79050]Project Closed.
+D1_L7=[79122]Project Opened.
+D1_L8=[79333]Started Editing.
+D1_L9=[80195]Stopped Editing.
+D1_L10=[80240]Started Editing.
+D1_L11=[80939]Project Opened.
+D1_L12=[80959]Started Editing.
+D1_L13=[82598]Stopped Editing.
+D1_L14=[82898]Started Editing.
+D1_L15=[83298]Stopped Editing.
+D1_L16=[83395]Started Editing.
+D1_L17=[84308]Stopped Editing.
+D1_L18=[84443]Started Editing.
+D1_L19=[85108]Stopped Editing.
+D1_L20=[85108]Project Closed.
+D1_L21=[85293]Project Opened.
+D1_L22=[85341]Started Editing.
+D1_L23=[85541]Stopped Editing.
+D1_L24=[85541]Project Closed.
+D2=27-03-2023
+D2_L=1
+D2_L1=[83522]Project Opened.
+D3=28-03-2023
+D3_L=1
+D3_L1=[2284]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=thaotacLCD (main)

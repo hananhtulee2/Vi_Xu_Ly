@@ -1,0 +1,50 @@
+#include <16F887.h>
+#device ADC=10
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+#include <lcd.c>
+
+unsigned int8 T1 ; 
+unsigned int8 T2 ; 
+
+void main(){ 
+   set_tris_a(0xff) ; 
+   
+   setup_adc(adc_clock_internal);
+   setup_adc_ports(SAN1|SAN2|VSS_VDD);
+   
+   lcd_init();
+
+
+while(true){
+   set_adc_channel(1);
+   T1 = read_adc()/2.046;
+   set_adc_channel(2);
+   T2= read_adc()/2.046;
+   
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"T1=%03u",T1);
+   lcd_putc(223);
+   lcd_putc('C');
+   
+   lcd_gotoxy(9,1);
+   printf(lcd_putc,"T2=%03u",T2);
+   lcd_putc(223);
+   lcd_putc('C');
+   
+   if(T1>60 && T2<60) {
+      lcd_gotoxy(3,2);
+      lcd_putc("QUA NHIET K1");
+   }
+   else if(T2>60 && T1<60) {
+      lcd_gotoxy(3,2);
+      lcd_putc("QUA NHIET K2");
+   } 
+   else if(T1>60 && T2>60){
+      lcd_gotoxy(3,2);
+      lcd_putc("QUA NHIET 2K");
+   } 
+   
+}
+
+}

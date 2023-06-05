@@ -1,0 +1,50 @@
+[PROJECT]
+Target=ktrabai3.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=ktrabai3.c
+[ktrabai3.c]
+Type=4
+[mru-list]
+1=ktrabai3.c
+[Units]
+Count=1
+1=ktrabai3 (main)
+
+[defines]
+buildcount=1
+
+[Opened Files]
+1=C:\Users\anhtu\Downloads\ON VXL.c
+t1=37
+2=ktrabai3.c
+t2=37
+Count=2
+
+[ProjectLog]
+Days=3
+D1=04-04-2023
+D1_L=2
+D1_L1=[50491]Stopped Editing.
+TotalEdit=13
+TotalDebug=0
+D1_E=13
+D1_D=0
+D1_L2=[50491]Project Closed.
+D2=08-04-2023
+D2_L=4
+D2_L1=[33366]Project Opened.
+D2_L2=[33367]Project Closed.
+D2_L3=[33368]Project Opened.
+D2_L4=[33381]Project Closed.
+D3=16-04-2023
+D3_L=4
+D3_L1=[53885]Project Opened.
+D3_L2=[53886]Project Closed.
+D3_L3=[53888]Project Opened.
+D3_L4=[55512]Project Closed.
+
+[fileformats]
+forcecoff=0

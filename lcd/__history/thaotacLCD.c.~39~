@@ -1,0 +1,19 @@
+#include <16F877.h>
+#fuses XT,NOWDT,NOPROTECT,NOLVP
+#use delay(clock=4000000)
+
+#define btn_UP  PIN_B0
+#define btn_DOWN  PIN_B1
+#define btn_STP PIN_B2 
+#include <LCD.c>
+void main()
+{
+set_tris_b(0xff);
+set_tris_d(0x00);
+lcd_init();
+while(1)
+{
+lcd_gotoxy(0,0);
+lcd_putc("fReady...");
+delay_ms(100);
+}

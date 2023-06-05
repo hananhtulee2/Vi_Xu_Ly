@@ -1,0 +1,20 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define  RAND  PIN_B0
+
+
+unsigned int8 mode ;
+unsigned int8 speed ; 
+
+
+void main(){
+
+
+
+while(true){
+
+}
+
+}

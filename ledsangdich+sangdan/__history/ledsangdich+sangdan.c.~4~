@@ -1,0 +1,21 @@
+#include <16F887.h>
+#fuses INTRC_IO  
+#use delay(CLOCK=8MHz)
+
+unsigned arr[9] = {00000001, 00000011, 00000111, 00001111 , 00011111,000111111 ,00111111,01111111 ,11111111
+} ; 
+
+signed int i ; 
+
+void main(){
+
+set_tris_a(0b00000000);
+while(TRUE){
+   for ( i = 0 ; i<=9 ; i++){
+      output_a(arr[i]);
+      delay_ms(500);
+   
+   }
+
+}
+}

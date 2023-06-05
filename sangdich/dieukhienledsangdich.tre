@@ -1,0 +1,8 @@
+ÀÄdieukhienledsangdich
+   ÀÄMAIN  0/58  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
+      ÃÄsangdich_motor  0/30  Ram=1
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÀÄtatdich_motor  0/30  Ram=1
+         ÀÄ@delay_ms1  0/20  Ram=1

@@ -1,0 +1,64 @@
+[PROJECT]
+Target=bai2.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=bai2.c
+[bai2.c]
+Type=4
+[mru-list]
+1=bai2.c
+
+[defines]
+buildcount=11
+
+[ProjectLog]
+Days=1
+D1=23-05-2023
+D1_L=28
+D1_L1=[58770]Started Editing.
+D1_L2=[59146]Stopped Editing.
+TotalEdit=21
+TotalDebug=0
+D1_E=21
+D1_D=0
+D1_L3=[59146]Project Closed.
+D1_L4=[59161]Project Opened.
+D1_L5=[59162]Project Closed.
+D1_L6=[59163]Project Opened.
+D1_L7=[59172]Started Editing.
+D1_L8=[59208]Stopped Editing.
+D1_L9=[59208]Project Closed.
+D1_L10=[59222]Project Opened.
+D1_L11=[59223]Project Closed.
+D1_L12=[59225]Project Opened.
+D1_L13=[59280]Started Editing.
+D1_L14=[59294]Stopped Editing.
+D1_L15=[59294]Project Closed.
+D1_L16=[59309]Project Opened.
+D1_L17=[59310]Project Closed.
+D1_L18=[59312]Project Opened.
+D1_L19=[59332]Started Editing.
+D1_L20=[60008]Stopped Editing.
+D1_L21=[60008]Project Closed.
+D1_L22=[61345]Project Opened.
+D1_L23=[61347]Project Closed.
+D1_L24=[61349]Project Opened.
+D1_L25=[61374]Started Editing.
+D1_L26=[61688]Stopped Editing.
+D1_L27=[61738]Started Editing.
+D1_L28=[61946]Project Closed.
+
+[Opened Files]
+1=bai1.c
+t1=1
+2=..\DeHK2-2020-2021\bai2.c
+t2=1
+Count=2
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=bai2 (main)

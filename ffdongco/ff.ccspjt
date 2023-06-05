@@ -1,0 +1,23 @@
+[PROJECT]
+Target=ff.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=ff.c
+[ff.c]
+Type=4
+[mru-list]
+1=ff.c
+[Units]
+Count=1
+1=ff (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=22-05-2023
+D1_L=1
+D1_L1=[4770]Project Closed.

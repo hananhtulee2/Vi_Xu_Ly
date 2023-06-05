@@ -1,0 +1,25 @@
+[PROJECT]
+Target=lednhapnhay.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=lednhapnhay.c
+[lednhapnhay.c]
+Type=4
+[mru-list]
+1=lednhapnhay.c
+[Units]
+Count=1
+1=lednhapnhay (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=30-03-2023
+D1_L=3
+D1_L1=[80945]Stopped Editing.
+D1_L2=[80952]Started Editing.
+D1_L3=[80954]Project Closed.

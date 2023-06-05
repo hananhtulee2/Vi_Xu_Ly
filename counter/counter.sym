@@ -1,0 +1,58 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+021     main.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+00001A  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\
+
+Project Files:
+    counter.c                                               [18-Apr-23 16:03  CRC=CF12E969]
+    C:\Program Files (x86)\PICC\Devices\16F887.h            [06-May-22 15:52  CRC=DB832FED]
+
+Source signature=86194943
+Program memory checksum=0000
+Hex file CRC=DFBB
+
+Units:
+    E:\PIC 16F887\Code\counter (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   counter.xsym
+    Errors:      counter.err
+    Ext Symbols: counter.esym
+    INHX8:       counter.hex
+    Symbols:     counter.sym
+    List:        counter.lst
+    Debug/COFF:  counter.cof
+    Project:     counter.ccspjt
+    Call Tree:   counter.tre
+    Statistics:  counter.STA

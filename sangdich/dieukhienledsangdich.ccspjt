@@ -1,0 +1,58 @@
+[PROJECT]
+Target=dieukhienledsangdich.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=dieukhienledsangdich.c
+[dieukhienledsangdich.c]
+Type=4
+[mru-list]
+1=dieukhienledsangdich.c
+
+[defines]
+buildcount=7
+
+[Opened Files]
+1=dieukhienledsangdich.c
+t1=13
+Count=1
+
+[ProjectLog]
+Days=6
+D1=24-03-2023
+D1_L=5
+D1_L1=[74855]Stopped Editing.
+D1_L2=[75037]Started Editing.
+D1_L3=[75477]Stopped Editing.
+TotalEdit=19
+TotalDebug=0
+D1_E=19
+D1_D=0
+D1_L4=[75477]Project Closed.
+D1_L5=[75493]Project Opened.
+D2=28-03-2023
+D2_L=2
+D2_L1=[45317]Project Opened.
+D2_L2=[45659]Project Closed.
+D3=30-03-2023
+D3_L=2
+D3_L1=[80579]Project Opened.
+D3_L2=[80581]Project Closed.
+D4=20-05-2023
+D4_L=2
+D4_L1=[65759]Project Opened.
+D4_L2=[66038]Project Closed.
+D5=22-05-2023
+D5_L=2
+D5_L1=[984]Project Opened.
+D5_L2=[1039]Project Closed.
+D6=30-05-2023
+D6_L=1
+D6_L1=[84957]Project Opened.
+[Units]
+Count=1
+1=dieukhienledsangdich (main)
+
+[fileformats]
+forcecoff=0

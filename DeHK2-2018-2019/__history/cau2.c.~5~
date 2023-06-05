@@ -1,0 +1,30 @@
+#include <16F887.h>
+#device ADC=10
+#fuses hs
+#use delay(CLOCK=20MHz)
+#include <lcd.c>
+#use rs232(BAUD=9600,BITS=8,STOP=1,PARITY=N,RCV=PIN_C7,XMIT=PIN_C6)
+
+unsigned int8 rxdata ;
+unsigned int8 temp ,prev_temp ;
+unsigned int8 mode ; 
+
+
+void main(){
+   set_tris_c(0x80);
+   set_tris_a(0x0b00000110);
+   
+   setup_adc(adc_clock_internal);
+   setup_adc_ports(SAN1|SAN2|VSS_VDD);
+   
+   lcd_init();
+
+while(true){
+      
+
+
+
+}
+}
+
+

@@ -1,0 +1,85 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define  P1       PIN_B1
+#define  P2       PIN_B2
+#define  P3       PIN_B3
+#define  STOP     PIN_B4
+#define  PulseOut PIN_C2
+#bit     TMR1IF = 0x0b.0
+
+
+unsigned int8 mode = 0 ; 
+char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+
+void main(){
+   set_tris_b(0xff);
+   set_tris_d(0x00);
+   set_tris_c(0x00);
+   set_tris_a(0xff);
+
+   setup_ccp1(ccp_off); output_low(PulseOut);
+   
+
+while(true){
+   
+   if(input(P1) == 0 ){
+         delay_ms(50);
+         mode = 1 ;
+         while(input(P1)==0);
+         delay_ms(50);
+   } else if(input(P2) == 0 ){
+         delay_ms(50);
+         mode = 2 ;
+         while(input(P2)==0);
+         delay_ms(50);
+   } else if(input(P3) == 0 ){
+         delay_ms(50);
+         mode = 3 ;
+         while(input(P3)==0);
+         delay_ms(50);
+   } else if(input(STOP) == 0 ){
+         delay_ms(50);
+         mode = 0 ;
+         while(input(STOP)==0);
+         delay_ms(50);
+   }else ;    
+     
+     if (mode == 1){
+        output_high(PulseOut);
+        delay_us(1500);
+        output_low(PulseOut);
+        delay_us(500);
+     }else if (mode == 2){
+       // Xu ly muc cao 1,5ms 
+        output_high(PulseOut);
+        TMR1IF = 0 ; 
+        setup_timer_1(t1_internal|t1_div_by_8);
+        set_timer1(65161);
+        while(TMR1IF == 0) ; 
+       
+       // Xu ly muc thap 0,5ms
+        output_low(PulseOut); 
+        TMR1IF = 0 ; 
+        setup_timer_1(t1_internal|t1_div_by_8);
+        set_timer1(65411);
+        while(TMR1IF == 0) ; 
+     }else if (mode == 3){
+        
+        setup_timer_2(T2_DIV_BY_16,249,1);
+        set_timer2(0);
+        
+        setup_ccp1(ccp_pwm);
+        set_pwm1_duty(375) ; 
+     }else if (mode== 0){
+         output_low(PulseOut);
+     }else ; 
+   
+   
+   //xuat ra led7seg 
+    output_d(Code7Seg[mode]) ; 
+
+}
+
+}

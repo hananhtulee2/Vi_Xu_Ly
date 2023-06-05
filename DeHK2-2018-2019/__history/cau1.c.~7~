@@ -1,0 +1,57 @@
+#include <16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define  P1       PIN_B1
+#define  P2       PIN_B2
+#define  P3       PIN_B3
+#define  STOP     PIN_B4
+#define  PulseOut PIN_C2
+
+
+unsigned int8 mode = 0 ; 
+char Code7Seg[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+
+void main(){
+   set_tris_b(0xff);
+   set_tris_d(0x00);
+   set_tris_c(0x00);
+
+   output_low(PulseOut);
+
+while(true){
+   if(input(P1) == 0 ){
+         delay_ms(50);
+         mode = 1 ;
+         while(input(P1)==0);
+         delay_ms(50);
+   } else if(input(P2) == 0 ){
+         delay_ms(50);
+         mode = 2 ;
+         while(input(P2)==0);
+         delay_ms(50);
+   } else if(input(P3) == 0 ){
+         delay_ms(50);
+         mode = 3 ;
+         while(input(P3)==0);
+         delay_ms(50);
+   } else if(input(STOP) == 0 ){
+         delay_ms(50);
+         mode = 0 
+         while(input(STOP)==0);
+         delay_ms(50);
+   } else ;   
+     
+     if (mode == 1){
+        output_high(PulseOut);
+        delay_us(1500);
+        output_low(PulseOut);
+        delay_us(500);
+     } else if (mode = 2){
+         
+     
+     }
+
+}
+
+}

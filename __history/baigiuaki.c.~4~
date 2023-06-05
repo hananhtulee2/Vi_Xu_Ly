@@ -1,0 +1,25 @@
+#include<16F887.h>
+#device ADC=10
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+#include <lcd.c>
+
+
+const unsigned int8 ma7doan[]={ 0xc0 ,0xf9 , 0xa4,0xb0 , 0x99 , 0x92,0x82 ,0xf8 , 0x80, 0x90};
+
+
+void main(){
+
+   set_tris_c(0x00) ; 
+   set_tris_b(0x00) ;
+   set_tris_d(0x00) ; 
+while(TRUE){
+
+
+
+
+
+
+}
+
+}

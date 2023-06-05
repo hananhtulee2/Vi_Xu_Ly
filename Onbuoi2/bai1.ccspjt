@@ -1,0 +1,53 @@
+[PROJECT]
+Target=bai1.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=bai1.c
+[bai1.c]
+Type=4
+[mru-list]
+1=bai1.c
+
+[defines]
+buildcount=5
+
+[Opened Files]
+1=bai1.c
+t1=53
+Count=1
+[Units]
+Count=1
+1=bai1 (main)
+
+[ProjectLog]
+Days=2
+D1=23-05-2023
+D1_L=13
+D1_L1=[58424]Stopped Editing.
+TotalEdit=15
+TotalDebug=0
+D1_E=15
+D1_D=0
+D1_L2=[58424]Project Closed.
+D1_L3=[58497]Project Opened.
+D1_L4=[58509]Started Editing.
+D1_L5=[58521]Project Closed.
+D1_L6=[59162]Project Opened.
+D1_L7=[59163]Project Closed.
+D1_L8=[59223]Project Opened.
+D1_L9=[59225]Project Closed.
+D1_L10=[59310]Project Opened.
+D1_L11=[59312]Project Closed.
+D1_L12=[61347]Project Opened.
+D1_L13=[61349]Project Closed.
+D2=28-05-2023
+D2_L=4
+D2_L1=[81339]Project Opened.
+D2_L2=[81341]Project Closed.
+D2_L3=[82824]Project Opened.
+D2_L4=[82826]Project Closed.
+
+[fileformats]
+forcecoff=0

@@ -1,0 +1,67 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     i
+021     j
+022     k
+023     mode
+024-029 RD5_RD0
+02A-02E RC7_RC3
+02F     @TRIS_C
+030     @delay_ms1.P1
+030     main.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000018  @cinit1
+000018  main
+000033  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\ktrabai1\
+
+Project Files:
+    ktrabai1.c                                              [03-Apr-23 00:25  CRC=A0578A18]
+    C:\Program Files (x86)\PICC\Devices\16F887.h            [06-May-22 15:52  CRC=DB832FED]
+
+Source signature=575DE9F2
+Program memory checksum=0000
+Hex file CRC=BA61
+
+Units:
+    E:\PIC 16F887\Code\ktrabai1\ktrabai1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   ktrabai1.xsym
+    Errors:      ktrabai1.err
+    Ext Symbols: ktrabai1.esym
+    INHX8:       ktrabai1.hex
+    Symbols:     ktrabai1.sym
+    List:        ktrabai1.lst
+    Debug/COFF:  ktrabai1.cof
+    Project:     ktrabai1.ccspjt
+    Call Tree:   ktrabai1.tre
+    Statistics:  ktrabai1.STA

@@ -1,0 +1,50 @@
+[PROJECT]
+Target=ktrabai2.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=ktrabai2.c
+[ktrabai2.c]
+Type=4
+[mru-list]
+1=ktrabai2.c
+
+[defines]
+buildcount=2
+
+[Opened Files]
+1=..\dieukhiennutnhankhongchongdoi\nutnhankhongchongdoi.c
+t1=1
+2=ktrabai1.c
+t2=1
+3=..\quetled7doan\quetled7doan.c
+t3=14
+4=lcd-adc.c
+t4=1
+5=ktrabai2.c
+t5=1
+Count=5
+[Units]
+Count=1
+1=ktrabai2 (main)
+
+[ProjectLog]
+Days=2
+D1=03-04-2023
+D1_L=1
+D1_L1=[85328]Stopped Editing.
+TotalEdit=5
+TotalDebug=0
+D2=04-04-2023
+D2_E=5
+D2_D=0
+D2_L=5
+D2_L1=[1476]Project Closed.
+D2_L2=[2680]Project Opened.
+D2_L3=[2682]Project Closed.
+D2_L4=[2683]Project Opened.
+D2_L5=[2723]Project Closed.
+
+[fileformats]
+forcecoff=0

@@ -1,0 +1,62 @@
+[PROJECT]
+Target=onbai1.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=onbai1.c
+[onbai1.c]
+Type=4
+[mru-list]
+1=onbai1.c
+
+[defines]
+buildcount=27
+
+[ProjectLog]
+Days=2
+D1=20-05-2023
+D1_L=8
+D1_L1=[49131]Stopped Editing.
+D1_L2=[49166]Started Editing.
+D1_L3=[50927]Stopped Editing.
+D1_L4=[51814]Started Editing.
+D1_L5=[52114]Stopped Editing.
+D1_L6=[52756]Started Editing.
+D1_L7=[53250]Stopped Editing.
+TotalEdit=68
+TotalDebug=0
+D1_E=48
+D1_D=0
+D1_L8=[53250]Project Closed.
+D2=22-05-2023
+D2_L=12
+D2_L1=[58311]Project Opened.
+D2_L2=[58775]Started Editing.
+D2_L3=[59262]Stopped Editing.
+D2_L4=[59559]Started Editing.
+D2_L5=[59911]Stopped Editing.
+D2_E=20
+D2_D=0
+D2_L6=[59911]Project Closed.
+D2_L7=[60300]Project Opened.
+D2_L8=[60331]Started Editing.
+D2_L9=[60694]Stopped Editing.
+D2_L10=[61008]Started Editing.
+D2_L11=[61563]Stopped Editing.
+D2_L12=[61563]Project Closed.
+
+[Opened Files]
+1=onbai1.c
+t1=19
+Count=2
+2=C:\Program Files (x86)\PICC\Drivers\lcd.c
+t2=185
+3=C:\Program Files (x86)\PICC\Devices\16F887.h
+t3=222
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=onbai1 (main)

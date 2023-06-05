@@ -1,0 +1,224 @@
+CCS PCM C Compiler, Version 5.109, 43599               24-Mar-23 20:53
+
+               Filename:   E:\PIC 16F887\Code\dieukhienledsangdich.lst
+
+               ROM used:   142 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   17 (5%) at main() level
+                           19 (5%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   054
+0003:  NOP
+.................... #include <16F887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+.................... 
+.................... #list
+.................... 
+.................... #fuses INTRC 
+.................... #use delay(clock = 8 MHZ)
+0004:  MOVLW  2D
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  02
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  97
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+.................... #define btn_DIR  PIN_B0 
+.................... #define btn_CLR  PIN_B1
+.................... 
+.................... unsigned int8 sangdich_array[5] = {0b0001,0b0010,0b0100,0b1000,0b0000} ;
+*
+006B:  MOVLW  01
+006C:  BCF    03.6
+006D:  MOVWF  20
+006E:  MOVLW  02
+006F:  MOVWF  21
+0070:  MOVLW  04
+0071:  MOVWF  22
+0072:  MOVLW  08
+0073:  MOVWF  23
+0074:  CLRF   24
+.................... unsigned int8 tatdich_array[5] = {0b1111,0b0111,0b0011,0b0001,0b0000}; 
+0075:  MOVLW  0F
+0076:  MOVWF  25
+0077:  MOVLW  07
+0078:  MOVWF  26
+0079:  MOVLW  03
+007A:  MOVWF  27
+007B:  MOVLW  01
+007C:  MOVWF  28
+007D:  CLRF   29
+.................... 
+.................... signed int8 direction ;  
+.................... signed int8 i ; 
+.................... 
+.................... void sangdich_motor()
+.................... {
+....................    for( i = 0 ; i <= 4 ; i++){
+*
+0018:  CLRF   2B
+0019:  BTFSC  2B.7
+001A:  GOTO   01F
+001B:  MOVF   2B,W
+001C:  SUBLW  04
+001D:  BTFSS  03.0
+001E:  GOTO   033
+....................    output_d(sangdich_array[i]); 
+001F:  MOVLW  20
+0020:  ADDWF  2B,W
+0021:  MOVWF  04
+0022:  BCF    03.7
+0023:  MOVF   00,W
+0024:  MOVWF  2C
+0025:  BSF    03.5
+0026:  CLRF   08
+0027:  BCF    03.5
+0028:  MOVF   2C,W
+0029:  MOVWF  08
+....................    delay_ms(500);
+002A:  MOVLW  02
+002B:  MOVWF  2C
+002C:  MOVLW  FA
+002D:  MOVWF  2D
+002E:  CALL   004
+002F:  DECFSZ 2C,F
+0030:  GOTO   02C
+0031:  INCF   2B,F
+0032:  GOTO   019
+....................    }
+0033:  BCF    0A.3
+0034:  BCF    0A.4
+0035:  GOTO   087 (RETURN)
+.................... }
+.................... 
+.................... void tatdich_motor(){
+.................... for( i = 0 ; i <= 4 ; i++){
+0036:  CLRF   2B
+0037:  BTFSC  2B.7
+0038:  GOTO   03D
+0039:  MOVF   2B,W
+003A:  SUBLW  04
+003B:  BTFSS  03.0
+003C:  GOTO   051
+....................    output_d(tatdich_array[i]); 
+003D:  MOVLW  25
+003E:  ADDWF  2B,W
+003F:  MOVWF  04
+0040:  BCF    03.7
+0041:  MOVF   00,W
+0042:  MOVWF  2C
+0043:  BSF    03.5
+0044:  CLRF   08
+0045:  BCF    03.5
+0046:  MOVF   2C,W
+0047:  MOVWF  08
+....................    delay_ms(500);
+0048:  MOVLW  02
+0049:  MOVWF  2C
+004A:  MOVLW  FA
+004B:  MOVWF  2D
+004C:  CALL   004
+004D:  DECFSZ 2C,F
+004E:  GOTO   04A
+004F:  INCF   2B,F
+0050:  GOTO   037
+....................    }
+0051:  BCF    0A.3
+0052:  BCF    0A.4
+0053:  GOTO   08A (RETURN)
+.................... }
+.................... 
+.................... void main(){
+0054:  MOVF   03,W
+0055:  ANDLW  1F
+0056:  MOVWF  03
+0057:  MOVLW  71
+0058:  BSF    03.5
+0059:  MOVWF  0F
+005A:  CLRF   10
+005B:  MOVF   0F,W
+005C:  BSF    03.6
+005D:  MOVF   09,W
+005E:  ANDLW  C0
+005F:  MOVWF  09
+0060:  BCF    03.6
+0061:  BCF    1F.4
+0062:  BCF    1F.5
+0063:  MOVLW  00
+0064:  BSF    03.6
+0065:  MOVWF  08
+0066:  BCF    03.5
+0067:  CLRF   07
+0068:  CLRF   08
+0069:  CLRF   09
+006A:  BCF    03.7
+.................... 
+.................... 
+.................... set_tris_d(0b0000) ; 
+*
+007E:  MOVLW  00
+007F:  BSF    03.5
+0080:  MOVWF  08
+.................... 
+.................... direction = 1 ; 
+0081:  MOVLW  01
+0082:  BCF    03.5
+0083:  MOVWF  2A
+.................... 
+.................... WHILE(TRUE)
+.................... {
+....................    if (direction == 1)
+0084:  DECFSZ 2A,W
+0085:  GOTO   089
+....................    {
+....................       sangdich_motor();
+0086:  GOTO   018
+....................       direction = 0 ; 
+0087:  CLRF   2A
+....................    }
+0088:  GOTO   08C
+....................    else 
+....................    {
+....................       tatdich_motor();
+0089:  GOTO   036
+....................       direction = 1 ; 
+008A:  MOVLW  01
+008B:  MOVWF  2A
+....................    }
+008C:  GOTO   084
+.................... }
+.................... }
+.................... 
+008D:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FE5   INTRC NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

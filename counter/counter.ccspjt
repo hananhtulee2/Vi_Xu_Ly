@@ -1,0 +1,40 @@
+[PROJECT]
+Target=counter.hex
+Processor_Text=PIC16F887
+CCSVersion=5.109
+Compiler=PCM
+[Target Data]
+FileList=counter.c
+[counter.c]
+Type=4
+[mru-list]
+1=counter.c
+
+[defines]
+buildcount=3
+
+[ProjectLog]
+Days=2
+D1=18-04-2023
+D1_L=6
+D1_L1=[57937]Project Closed.
+D1_L2=[57937]Project Opened.
+D1_L3=[57955]Project Closed.
+D1_L4=[57969]Project Opened.
+D1_L5=[58065]Started Editing.
+D1_L6=[58067]Project Closed.
+D2=04-05-2023
+D2_L=2
+D2_L1=[53737]Project Opened.
+D2_L2=[53738]Project Closed.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=counter.c
+t1=1
+Count=1
+[Units]
+Count=1
+1=counter (main)

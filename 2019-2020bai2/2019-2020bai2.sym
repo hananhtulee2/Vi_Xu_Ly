@@ -1,0 +1,129 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     lcdlat
+008     lcd
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     SP
+021-022 BOX
+023     ND
+024     @TRIS_C
+025     @PRINTF_U_733.P1
+025     @PSTRINGCN7_733.P2
+025     lcd_init.i
+025-028 @SFTOI.P1
+025-026 @PRINTF_LU_733.P2
+025     MAIN.@SCRATCH1
+026     @PRINTF_U_733.P1
+026-029 lcd_init.LCD_INIT_STRING
+026     MAIN.@SCRATCH2
+026     @PSTRINGCN7_733.@SCRATCH1
+027-028 @ITOF.P1
+027-02A @DIVFF.P2
+027     @DIV88.P3
+027     @PSTRINGCN7_733.@SCRATCH2
+027     @PRINTF_LU_733.@SCRATCH1
+028     @DIV88.P1
+028     @PSTRINGCN7_733.@SCRATCH3
+028     @PRINTF_LU_733.@SCRATCH2
+029     @PSTRINGCN7_733.@SCRATCH4
+029     @DIV88.@SCRATCH1
+029     @PRINTF_LU_733.@SCRATCH3
+02A     lcd_init.@SCRATCH1
+02A     @PRINTF_LU_733.@SCRATCH4
+02B-02E @DIVFF.P1
+02B     @PRINTF_LU_733.@SCRATCH5
+02C     @PRINTF_LU_733.@SCRATCH6
+02D     @PRINTF_LU_733.@SCRATCH7
+02E     lcd_putc.c
+02F     lcd_gotoxy.x
+02F     @delay_ms1.P1
+02F     @DIVFF.@SCRATCH1
+030     lcd_gotoxy.y
+030     @DIVFF.@SCRATCH2
+031     lcd_gotoxy.address
+031     @DIVFF.@SCRATCH3
+032     lcd_gotoxy.@SCRATCH1
+032     @DIVFF.@SCRATCH4
+033     lcd_send_byte.address
+033     @DIVFF.@SCRATCH5
+034     lcd_send_byte.n
+034     @DIVFF.@SCRATCH6
+035     lcd_read_byte.low
+035     lcd_send_byte.@SCRATCH1
+036     lcd_read_byte.high
+036     lcd_send_nibble.n
+037     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const759.call
+000009  @const768.call
+00000F  @const771.call
+000014  @delay_ms1
+000028  lcd_send_nibble
+000035  lcd_read_nibble
+00003B  lcd_send_byte
+000041  lcd_read_byte
+00007B  lcd_init
+0000B9  @ITOF
+0000D8  @DIVFF
+0001A4  @SFTOI
+0001C5  lcd_gotoxy
+0001D7  lcd_putc
+000203  @PSTRINGCN7_733
+00025A  @DIV88
+00026F  @PRINTF_U_733
+0002A4  @PRINTF_LU_733
+000309  @cinit1
+000309  MAIN
+000327  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\2019-2020bai2\
+
+Project Files:
+    2019-2020bai2.c                                         [11-May-23 23:56  CRC=68084E49]
+    C:\Program Files (x86)\PICC\Devices\16F887.h            [06-May-22 15:52  CRC=DB832FED]
+    C:\Program Files (x86)\PICC\Drivers\lcd.c               [22-Feb-16 10:05  CRC=D1A6378A]
+
+Source signature=E6D7ED4A
+Program memory checksum=0000
+Hex file CRC=183B
+
+Units:
+    E:\PIC 16F887\Code\2019-2020bai2\2019-2020bai2 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   2019-2020bai2.xsym
+    Errors:      2019-2020bai2.err
+    Ext Symbols: 2019-2020bai2.esym
+    INHX8:       2019-2020bai2.hex
+    Symbols:     2019-2020bai2.sym
+    List:        2019-2020bai2.lst
+    Debug/COFF:  2019-2020bai2.cof
+    Project:     2019-2020bai2.ccspjt
+    Call Tree:   2019-2020bai2.tre
+    Statistics:  2019-2020bai2.STA

@@ -1,0 +1,23 @@
+#include <16F887.h>
+#include <LCD.c>
+#use delay(clock = 8MHZ)
+#define btn_UP  PIN_B0 
+#define btn_DOWN  PIN_B1
+#define btn_STP PIN_B2 
+
+signed int8 varCount ; 
+
+void main()
+{
+set_tris_b(0xff);
+lcd_init();
+lcd_gotoxy(1,1);
+printf(lcd_putc,"Value = %03u",varCount); 
+set_tris_b(0xff) ; 
+
+
+
+
+
+}
+

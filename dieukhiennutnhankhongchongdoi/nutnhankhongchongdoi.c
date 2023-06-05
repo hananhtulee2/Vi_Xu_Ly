@@ -1,0 +1,32 @@
+#include<16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define Led       PIN_D0
+#define btnON     PIN_C0
+#define btnOFF    PIN_C1
+
+int1 Mode;
+
+
+void main()
+{
+set_tris_c(0b00000011);
+set_tris_d(0b11111110);
+Mode=0;
+
+while(TRUE)
+{
+if (input(btnON)==0) Mode=1;
+else 
+if (input(btnOFF)==0) Mode=0;
+else;
+
+if (Mode==1)
+{
+output_toggle(Led);
+delay_ms(200);
+}
+else output_low(Led);
+}
+}

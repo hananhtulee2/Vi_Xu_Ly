@@ -1,0 +1,113 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     lcd
+008     PSP_DATA
+008     lcdlat
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     varCount
+021-022 @sprintf_string
+023     @PRINTF_D0_719.P1
+023     lcd_init.i
+023     @PSTRINGCN7_719.P1
+023     MAIN.@SCRATCH1
+023     @PSTRINGC7_719.@SCRATCH1
+024     @PRINTF_D0_719.P1
+024-027 lcd_init.LCD_INIT_STRING
+024     @PSTRINGC7_719.@SCRATCH2
+024     @PSTRINGCN7_719.@SCRATCH1
+025     @PSTRINGC7_719.@SCRATCH3
+025     @PSTRINGCN7_719.@SCRATCH2
+025     @PRINTF_D0_719.@SCRATCH1
+026     @PSTRINGC7_719.@SCRATCH4
+026     @PSTRINGCN7_719.@SCRATCH3
+026     @PRINTF_D0_719.@SCRATCH2
+027     @PSTRINGCN7_719.@SCRATCH4
+027     @PRINTF_D0_719.@SCRATCH3
+028     lcd_init.@SCRATCH1
+028     @PRINTF_D0_719.@SCRATCH4
+029     lcd_putc.c
+029     @DIV88.P1
+02A     lcd_gotoxy.x
+02A     @DIV88.P1
+02A     @delay_ms1.P2
+02B     lcd_gotoxy.y
+02B     @DIV88.@SCRATCH1
+02C     lcd_gotoxy.address
+02D     lcd_gotoxy.@SCRATCH1
+02E     lcd_send_byte.address
+02F     lcd_send_byte.n
+030     lcd_read_byte.low
+030     lcd_send_byte.@SCRATCH1
+031     lcd_read_byte.high
+031     lcd_send_nibble.n
+032     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const735.call
+000009  @const740.call
+000010  @const749.call
+000017  @const750.call
+00001E  @delay_ms1
+000033  lcd_send_nibble
+00003F  lcd_read_nibble
+000045  lcd_send_byte
+00004B  lcd_read_byte
+000085  lcd_init
+0000C3  lcd_gotoxy
+0000D5  lcd_putc
+000101  @PSTRINGC7_719
+000159  @PSTRINGCN7_719
+0001B0  @DIV88
+0001C5  @PRINTF_D0_719
+00021C  MAIN
+00021C  @cinit1
+000226  @cinit2
+
+Project Directory:
+    E:\PIC 16F887\Code\
+
+Project Files:
+    thaotacLCD.c                                            [24-Mar-23 23:43  CRC=82F10EBB]
+    C:\Program Files (x86)\PICC\Devices\16F877.h            [06-May-22 15:52  CRC=1BEF2707]
+    C:\Program Files (x86)\PICC\Drivers\LCD.c               [22-Feb-16 10:05  CRC=D1A6378A]
+
+Source signature=422CA4D6
+Program memory checksum=0000
+Hex file CRC=86C4
+
+Units:
+    E:\PIC 16F887\Code\thaotacLCD (main)
+
+Compiler Settings:
+    Processor:      PIC16F877
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   thaotacLCD.xsym
+    Errors:      thaotacLCD.err
+    Ext Symbols: thaotacLCD.esym
+    INHX8:       thaotacLCD.hex
+    Symbols:     thaotacLCD.sym
+    List:        thaotacLCD.lst
+    Debug/COFF:  thaotacLCD.cof
+    Project:     thaotacLCD.ccspjt
+    Call Tree:   thaotacLCD.tre
+    Statistics:  thaotacLCD.STA

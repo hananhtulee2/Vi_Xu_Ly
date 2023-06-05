@@ -1,0 +1,71 @@
+#include<16F887.h>
+#fuses INTRC_IO
+#use delay(CLOCK=8MHz)
+
+#define btnON_OFF PIN_B0
+#define btnMODE    PIN_B1
+
+int8 i ,j ,k ;
+
+int8 RD5_RD0[6]={0b00100000,0b00010000,0b00001000,0b00000100,0b00000010,0b00000001};
+int8 RC7_RC3[5]={0b10000000,0b01000000,0b00100000,0b00010000,0b00001000};
+int8 RC5_RC7[]
+
+signed int8 MODE ;
+
+void main()
+{
+
+set_tris_b(0b00000011);
+set_tris_c(0b00000000);
+set_tris_d(0b00000000);
+set_tris_a(0b11111100);
+
+MODE = -1 ;
+
+
+while(TRUE)
+{
+if (input(btnON_OFF) == 0) 
+{
+   delay_ms(50) ; 
+   MODE += 1 ;
+   while(input(btnON_OFF) == 0) ;
+   delay_ms(50) ;
+
+}
+else
+   output_c(0b00000000) ; 
+   output_d(0b00000000) ;
+
+if (MODE == 0)
+{
+   output_c(0b00000000) ; 
+   output_d(0b00000000) ;
+   output_a(0b00000000) ;
+}
+else if (MODE == 1)
+{
+   for(k=0;k<=3;k++){
+      for(i=0 ;i<=5;i++){
+         delay_ms(20) ; 
+         output_c(RD5_RD0[i])
+      }
+      for(j=0 ;j<=5;j++){
+         delay_ms(20) ; 
+         output_c(RC7_RC3[j])
+      }
+    
+   }
+      output_a(0b00000001) ;
+}
+else if (MODE == 2)
+{
+   output_c(0xff) ; 
+   output_d(0xff) ;
+   for()
+   
+}
+}
+
+}

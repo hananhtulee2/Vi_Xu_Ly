@@ -1,0 +1,6 @@
+#include <16F887.h>
+#device ADC=10
+#fuses hs
+#use delay(CLOCK=20MHz)
+#include <lcd.c>
+#use rs232(BAUD=9600,BITS=8,STOP=1,PARITY=N,RCV=PIN_C7,XMIT=PIN_C6)
